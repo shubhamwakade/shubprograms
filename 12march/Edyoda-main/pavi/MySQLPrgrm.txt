@@ -1,0 +1,83 @@
+create database edyoda;
+
+use edyoda;
+
+Create table salespeople 
+
+( 
+
+Snum numeric(4), 
+
+Sname varchar(10), 
+
+City varchar(10), 
+
+Comm numeric(3,2),
+
+PRIMARY KEY(Snum),
+
+UNIQUE(Sname)
+
+); 
+
+Create table customers 
+
+( 
+
+Cnum numeric(4), 
+
+Cname varchar(10), 
+
+City varchar(10) NOT NULL, 
+
+Snum numeric(4),
+
+PRIMARY KEY(Cnum),
+
+FOREIGN KEY(Snum) REFERENCES salespeople(Snum)
+
+); 
+
+
+Create table orders 
+
+( 
+
+Onum numeric(4), 
+
+Amt numeric(7,2), 
+
+Odate date, 
+
+Cnum numeric(4), 
+
+Snum numeric(4),
+
+PRIMARY KEY(Onum),
+
+FOREIGN KEY(Snum) REFERENCES salespeople(Snum),
+
+FOREIGN KEY(Cnum) REFERENCES customers(Cnum)
+); 
+
+
+
+
+Insert into salespeople values(1001,'Peel','London',.12); 
+Insert into salespeople values(1002,'Serres','Sanjose',.13); 
+Insert into salespeople values(1004,'Motika','London',.11);
+Insert into salespeople values(1007,'Rifkin','Barcelona',.15);
+Insert into salespeople values(1003,'Axelrod','Newyork',.10); 
+ 
+ 
+
+Insert into customers values(2001,'Hoffman','London',1001); 
+Insert into customers values(2002,'Giovanni','Rome',1003);
+Insert into customers values(2003,'Liu','Sanjose',1002);  
+Insert into customers values(2004,'Grass','Berlin',1002); 
+Insert into customers values(2006,'Clemens','London',1001);
+Insert into customers values(2007,'Pereira','Rome',1004); 
+Insert into customers values(2008,'Cisneros','Sanjose',1007); 
+
+
+
