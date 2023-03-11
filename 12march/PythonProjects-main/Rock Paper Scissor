@@ -1,0 +1,39 @@
+import random 
+
+def game():
+    x = ['r','p','s']
+    y = str(input("Enter r for rock, p for paper or s for scisoor: "))
+    z = random.choice(x)
+    if y == 'r' and z =='p':
+        print("User 1: Rock")
+        print("Computer: Paper")
+        print("Computer Wins")
+    
+    elif y == 'p' and z =='s':
+        print("User 1: Paper")
+        print("Computer: scisoor")
+        print("Computer Wins")
+    
+    elif y == 's' and z =='r':
+        print("User 1: scisoor")
+        print("Computer: rock")
+        print("Computer Wins")
+        
+    elif y == 'p' and z =='r':
+        print("User 1: paper")
+        print("Computer: rock")
+        print("User 1 Wins")
+        
+    elif y == 's' and z =='p':
+        print("User 1: scisoor")
+        print("Computer: paper")
+        print("User 1 Wins")
+    
+    elif y == 'r' and z =='s':
+        print("User 1: rock")
+        print("Computer: scisoor")
+        print("User 1 Wins")
+    elif y==z or z ==y:
+        print("Lol. It is a tie")
+
+game()

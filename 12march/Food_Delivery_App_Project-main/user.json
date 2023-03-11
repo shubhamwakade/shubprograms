@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Kedar khaire",
+        "password": "123654",
+        "age": "25",
+        "Email": "kedarkhaire18@gmail.com",
+        "phone_number": "7447591854",
+        "address": "Pune",
+        "order history": {
+            "04-26-2022": [
+                "PaniPuri",
+                "Dosa"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "name": "Gautam",
+        "password": "123456",
+        "age": "45",
+        "Email": "gautam@gmail.com",
+        "phone_number": "8805627321",
+        "address": "Pachpimpala",
+        "order history": {
+            "04-26-2022": [
+                "Dosa",
+                "Idly",
+                "Chicken"
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "name": "Ranjana",
+        "password": "123458",
+        "age": "27",
+        "Email": "ranjana18@gamil.com",
+        "phone_number": "8421568712",
+        "address": "Patna",
+        "order history": {
+            "04-26-2022": [
+                "PaniPuri"
+            ]
+        }
+    }
+]

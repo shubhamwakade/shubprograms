@@ -1,0 +1,139 @@
+Movie = {1 : "Dil Chahta ha", 2 : "3 Idiots", 3 : "Bhaag Milkha Bhaag", 4 : "Crazy Stupid Love", 5: "Avataar"}
+MovieAdmin = {"id": "bookmyshow123@gmail.com", "pswd": "bookmyshow@123"}
+movielen = int(len(Movie))
+
+users = {}
+
+def role1():
+    role = int(input("Welcome to PVR Movie Center. Please Enter your role\n1. Admin \n2. User \n3. Exit \n"))
+    if role == 1:
+        admin(MovieAdmin)
+    
+    elif role == 2:
+        user_details(users)
+    
+    elif role == 3:
+        exit()
+ 
+
+def admin(MovieAdmin):
+    email = input("Enter admin E-Mail Id: ")
+    pswd = input("Enter admin password: ")
+    if email == MovieAdmin["id"] and pswd == MovieAdmin["pswd"]: 
+        print("Login Successfull.")
+        adminfun(Movie,movielen)
+    else:
+        print("Invalid Credentials. Try again.")
+        admin(MovieAdmin)
+        
+def adminfun(Movie,movielen):
+    a = int(input("Hello Admin. Please Enter your desires task \n1.View Shows \n2.Delete Shows \n3.Add Shows \n4.Exit.\n"))
+    
+    if a == 1:
+        for i in Movie:
+            print(i , Movie[i])
+        a1 = (int(input("Press 0 to go back. ")))
+        adminfun(Movie,movielen)
+    
+    if a == 2:
+        for i in Movie:
+            print(i , Movie[i])
+        a2 = int(input("Enter Movie number you want to delete. "))
+        a3 = Movie.get(a2)
+        Movie.pop(a2)
+        
+        
+        print(a3, "has been deleted. The Remaining shows are: ")
+        for i in Movie:
+                print(i, Movie[i])
+        a1 = (int(input("Press 0 to go back. ")))
+        adminfun(Movie,movielen)
+        
+    if a == 3:
+        a4 = (input("Enter Show Name you Want to Add: "))
+        movielen+=1
+        Movie[movielen] = a4
+        
+        
+        
+        print("The Show has been added. The new list of Movies are: ")
+        for i in Movie:
+            print(i, Movie[i])
+        a1 = (int(input("Press 0 to go back.\n")))
+        adminfun(Movie,movielen)
+    
+    if a == 4: 
+        print("Do Login again.")
+        role1()
+
+    
+    
+def user_details(users):
+    user_detail = {}
+    x = input("Are you an existing user: (Y / N): ")
+    if x == 'y':
+        e = input("Enter your Email: ")
+        pswd = input("Enter your password: ")
+        if e in users and pswd == users[e]["Password"]:
+            print("Login Successfull.")
+            user(Movie)
+        else:
+            print("Invalid Details.")
+            user_details(users)
+    else: 
+        print("Please enter your details for registeration.")
+        try: 
+            full_name = input("Enter full name: ")
+            phone_number = int(input("Enter Phone Number: "))
+            user_name = input("Enter user name: ")
+            email = str(input("Enter your Email Id: "))
+            pswd = input("Enter password: ")
+            user_detail = {"Full Name" : full_name, "Phone Number" : phone_number, "User Name" : user_name, "E-Mail" : email, "Password" : pswd}
+            users[email] = user_detail
+            print("Registeration Successfull. Please Login.")
+            user_details(users)
+        except:
+            print("Invalid Input. Try Again")
+            user_details(users)
+        
+       
+
+def user(Movie):
+    
+    general = 150
+    premium = 200
+    recliner = 400
+    
+    
+    print("Welcome to PVR Movie Center. Here are the shows for today")
+    
+    for i in Movie:
+            print(i, Movie[i])
+    
+    b = int(input("Please Enter Desired Movie you want to watch:\n"))
+    
+    
+    b1 = int(input("Choose the Desired seat option for {}.\n1.General \n2.Premium \n3.Recliner\n".format(Movie[b])))
+    b2 = int(input("Enter number of tickets:\n"))
+    
+    if b1 == 1:
+        print("Your Total Amount is:", general*b2)
+        print("Here are your {} tickets for {}. Enjoy the Show!!".format(b2,Movie[b]))
+        
+    
+    if b1 == 2:
+        print("Your Total Amount is:", premium*b2)
+        print("Here are your {} tickets for {}. Enjoy the Show!!".format(b2,Movie[b]))
+    
+    if b1 == 3:
+        print("Your Total Amount is:", recliner*b2)
+        print("Here are your {} tickets for {}. Enjoy the Show!!".format(b2,Movie[b]))
+        
+def exit():
+    print("Thanks for your visit.")
+    
+
+          
+
+role1()
+        

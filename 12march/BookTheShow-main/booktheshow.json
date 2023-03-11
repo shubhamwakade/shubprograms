@@ -1,0 +1,38 @@
+{
+    "7447591854": {
+        "name": "Kedar",
+        "phn": "7447591854",
+        "no_of_seat_booked": 2,
+        "booking_list": [
+            "A0",
+            "B0"
+        ]
+    },
+    "8605988125": {
+        "name": "Ganesh",
+        "phn": "8605988125",
+        "no_of_seat_booked": 2,
+        "booking_list": [
+            "A1",
+            "B3"
+        ]
+    },
+    "8421568925": {
+        "name": "Sonali",
+        "phn": "8421568925",
+        "no_of_seat_booked": 2,
+        "booking_list": [
+            "A2",
+            "B2"
+        ]
+    },
+    "8828132456": {
+        "name": "Ranjana",
+        "phn": "8828132456",
+        "no_of_seat_booked": 2,
+        "booking_list": [
+            "A3",
+            "B1"
+        ]
+    }
+}
