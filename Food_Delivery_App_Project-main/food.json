@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Dosa",
+        "price": 50.0,
+        "no_of_plates": 80
+    },
+    {
+        "id": 2,
+        "name": "Idly",
+        "price": 100.0,
+        "no_of_plates": 135
+    },
+    {
+        "id": 3,
+        "name": "PaniPuri",
+        "price": 30.0,
+        "no_of_plates": 70
+    },
+    {
+        "id": 4,
+        "name": "Chicken",
+        "price": 350.0,
+        "no_of_plates": 80
+    }
+]
